@@ -1,0 +1,30 @@
+
+PLAYER:
+
+walk
+    left
+    right
+    for
+    back
+look
+quit
+
+
+
+EDITOR:
+
+cls/clear .......... clear the screen
+save ............... save the project (you must name it first)
+load (projectName) . load a project from file
+name (name) ........ set the project name
+obj (options) ...... things relating to objects
+  obj  new (name) (location) (type)
+  obj (name) edit 
+                  name (new name)
+                  location (new location
+                  type (new type)
+                  pos (x) (y)
+       delete (name)
+       att
+           add (attribute)
+           remove (attribute)
