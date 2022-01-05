@@ -1,0 +1,6 @@
+/home/ian/Projects/AsciiE/AsciiE/bin/Debug/AsciiE.exe
+/home/ian/Projects/AsciiE/AsciiE/bin/Debug/AsciiE.pdb
+/home/ian/Projects/AsciiE/AsciiE/obj/x86/Debug/AsciiE.csprojAssemblyReference.cache
+/home/ian/Projects/AsciiE/AsciiE/obj/x86/Debug/AsciiE.csproj.CoreCompileInputs.cache
+/home/ian/Projects/AsciiE/AsciiE/obj/x86/Debug/AsciiE.exe
+/home/ian/Projects/AsciiE/AsciiE/obj/x86/Debug/AsciiE.pdb
