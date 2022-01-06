@@ -7,6 +7,7 @@ namespace AsciiE
     public static class Engine
     {
         // Variables
+        public static float projectVersion = 1.00f;
         public static string projectName = "";
         public static ProjectType projectType = ProjectType.rogueLike;
         public static List<Obj> Objects = new List<Obj>();
@@ -20,7 +21,7 @@ namespace AsciiE
         public static void Run()
         {
             bool isRunning = true;
-            Console.WriteLine("-- " + projectName + " --");
+            Console.WriteLine("-- " + projectName + " v" + projectVersion + " --");
 
             while (isRunning)
             {
@@ -180,6 +181,9 @@ namespace AsciiE
                         case "name":
                             projectName = input.Split()[1];
                             break;
+                        case "ver":
+                            projectVersion = float.Parse(input.Split()[1]);
+                            break;
                         case "obj":
                             string[] split = input.Split();
 
@@ -327,6 +331,7 @@ namespace AsciiE
             projectType = (ProjectType)int.Parse(file[1]);
             playerX = int.Parse(file[3]);
             playerY = int.Parse(file[4]);
+            projectVersion = float.Parse(file[5]);
 
             // Load in all the objects (from a seperate file)
             string[] objs = File.ReadAllLines(file[2]);
@@ -343,7 +348,7 @@ namespace AsciiE
         // Save assets
         public static void Save()
         {
-            string[] file = new string[5];
+            string[] file = new string[6];
 
             file[0] = projectName;
             file[1] = ((int)projectType).ToString();
@@ -351,6 +356,7 @@ namespace AsciiE
             file[2] = projectName + "-obj";
             file[3] = playerX.ToString();
             file[4] = playerY.ToString();
+            file[5] = projectVersion;
 
             File.WriteAllLines(projectName, file);
 
