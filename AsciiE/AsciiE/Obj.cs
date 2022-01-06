@@ -12,10 +12,11 @@ namespace AsciiE
         public string data;         // User defined data
         public string att;          // Attributes like 'not-passable'
 
-        public int x;
-        public int y;
+        public int x;               // X position of this object
+        public int y;               // Y position of this object
 
-
+        
+        // Optional constructor
         public Obj(string name, string location, string type)
         {
             this.name = name;
@@ -26,21 +27,26 @@ namespace AsciiE
         public Obj() { }
 
 
-        // Load from text
+        // Load from file/string
         public void Load(string text)
         {
+            // Seperated by Colons (:)
             string[] split = text.Split(':');
-
+           
+            // Name/Location
             name = split[0];
             location = split[1];
+            // Type/Data
             type = split[2];
             data = split[3];
+            // Attributes
             att = split[4];
+            // X/Y position
             x = int.Parse(split[5]);
             y = int.Parse(split[6]);
         }
 
-        // Save from text
+        // Save to a string (to be stored in a text file)
         public string Save()
         {
             return name + ":" + location + ":" + type + ":" + data + ":" + att + ":" + x + ":" + y;
@@ -49,8 +55,10 @@ namespace AsciiE
         // Contains this attribute
         public bool HasAttribute(string attribute)
         {
+            // Check all the attributes (seperated by commas (,))
             foreach(string s in att.Split(','))
             {
+                // Comparing
                 if (s == attribute)
                     return true;
             }
@@ -58,23 +66,29 @@ namespace AsciiE
             return false;
         }
 
-        // Add/Remove
+        // Add and attribute
         public void AddAttribute(string attribute)
         {
+            // Add comma
             if (att != "")
                 att += ",";
-
+            
+            // Add to attributes
             att += attribute;
         }
-
+        
+        // Remove an attribute
         public void RemoveAttribute(string attribute)
         {
+            // Collect into a list so we can remove one
             List<string> split = new List<string>();
-
+            // Add each attribute
             foreach(string s in att.Split(',')) { split.Add(s); }
 
+            // Attribute to remove (if it's here)
             int rem = -1;
-
+            
+            // Check to see if it's here
             for (int i = 0; i < split.Count; i++)
             {
                 // find the sttribute to remove
@@ -86,7 +100,7 @@ namespace AsciiE
             }
 
 
-            // It must be done
+            // If it's here remove it
             if (rem != -1)
             {
                 split.RemoveAt(rem);
