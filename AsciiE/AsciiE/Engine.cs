@@ -6,29 +6,34 @@ namespace AsciiE
 {
     public static class Engine
     {
-        // Variables
+        // Project variables
         public static float projectVersion = 1.00f;
         public static string projectName = "";
         public static ProjectType projectType = ProjectType.rogueLike;
+        
+        // Game objects
         public static List<Obj> Objects = new List<Obj>();
 
         // Player position
-        // In-game type resgame to reset everything
         public static int playerX = 0;
         public static int playerY = 0;
 
         // Play the game
         public static void Run()
         {
+            // Play the game as long as 'isRunning'
             bool isRunning = true;
+            // Project name/version
             Console.WriteLine("-- " + projectName + " v" + projectVersion + " --");
 
+            // Game loop
             while (isRunning)
             {
+                // Input
                 Console.Write(">");
-
                 string input = Console.ReadLine();
 
+                // Process commands
                 switch (input.Split()[0])
                 {
                     case "walk":
@@ -82,12 +87,15 @@ namespace AsciiE
                         }
                         break;
                     case "look":
+                        // You're standing here
                         Obj here = GetObj(playerX, playerY);
 
+                        // If it's air type 'you see nothing here'
                         if(here.type == "air")
                         {
                             Console.WriteLine("you see nothing here");
                         }
+                        // Else descibe object/location
                         else
                         {
                             Console.WriteLine("you see " + here.name + " a " + here.type + " at " + here.location);
@@ -95,9 +103,10 @@ namespace AsciiE
                         break;
                     case "quit":
                         Save();// Overwrites the game files, (include a copy?)
-                        isRunning = false;
+                        isRunning = false;// Quit the loop
                         break;
                     default:
+                        // Bad command.
                         Console.WriteLine("Bad Command.");
                         break;
                 }
@@ -107,8 +116,10 @@ namespace AsciiE
         // Game functions:
         public static bool Passable(int x, int y)
         {
+            // Search through objects to find x,y
             foreach(Obj obj in Objects)
             {
+                // Check positions
                 if(obj.x == x && obj.y == y)
                 {
                     //  'Tisn't passable!
@@ -119,27 +130,31 @@ namespace AsciiE
                     break;
                 }
             }
-
+            // isn't passable
             return true;
         }
 
         // Get object at x/y
         public static Obj GetObj(int x, int y)
         {
+            // Get object/object data at x,y
             foreach (Obj obj in Objects)
             {
+                // Check positions
                 if (obj.x == x && obj.y == y)
                 {
                     return obj;
                 }
             }
 
+            // There's no data here!
             return null;
         }
 
         // Get object by name
         public static Obj GetObj(string name)
         {
+            // Search through objects for 'name'
             foreach (Obj obj in Objects)
             {
                 if (obj.name == name)
@@ -158,10 +173,12 @@ namespace AsciiE
 
             while (isRunning)
             {
+                // input/commands
                 Console.Write("$ ");
 
                 string input = Console.ReadLine();
 
+                // this is a big mess, I'm not commenting it
                 try
                 {
                     switch (input.Split()[0])
@@ -325,6 +342,7 @@ namespace AsciiE
         // Load assets
         public static void Load(string fileName)
         {
+            // Read the file
             string[] file = File.ReadAllLines(fileName);
 
             projectName = file[0];
@@ -348,6 +366,7 @@ namespace AsciiE
         // Save assets
         public static void Save()
         {
+            // Write the file
             string[] file = new string[6];
 
             file[0] = projectName;
