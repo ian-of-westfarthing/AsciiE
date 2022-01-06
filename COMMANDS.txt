@@ -17,6 +17,7 @@ cls/clear .......... clear the screen
 save ............... save the project (you must name it first)
 load (projectName) . load a project from file
 name (name) ........ set the project name
+ver (version) ...... set project version
 obj (options) ...... things relating to objects
   obj  new (name) (location) (type)
   obj (name) edit 
