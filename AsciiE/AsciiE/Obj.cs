@@ -9,7 +9,7 @@ namespace AsciiE
         public string location;     // Location of the object
 
         public string type;         // User defined type
-        public string data;         // User defined data
+        public string data;         // User defined data; not implemented fully, could be used for scripting...
         public string att;          // Attributes like 'not-passable'
 
         public int x;               // X position of this object
@@ -50,6 +50,24 @@ namespace AsciiE
         public string Save()
         {
             return name + ":" + location + ":" + type + ":" + data + ":" + att + ":" + x + ":" + y;
+        }
+        
+        // Add data to objects data, in the form of bytes.
+        public void AddData(byte[] newdata)
+        {
+            foreach(byte b in newdata)
+            {
+                this.data += (char)b;   
+            }
+        }
+        
+        // Add data to objects data, in the form of characters
+        public void AddData(string newdata)
+        {
+            foreach(char c in newdata)
+            {
+                this.data += c;   
+            }
         }
 
         // Contains this attribute
