@@ -1,6 +1,7 @@
 
 PLAYER:
 
+cls/clear
 walk
     left
     right
