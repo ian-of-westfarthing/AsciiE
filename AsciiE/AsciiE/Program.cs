@@ -8,6 +8,10 @@ namespace AsciiE
 
         public static void Main(string[] args)
         {
+            
+            // Loading message
+            Console.WriteLine("Loading...");
+            
             // add default block (air)
             if(args.Length <= 1)
             {
