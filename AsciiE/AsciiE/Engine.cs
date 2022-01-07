@@ -41,6 +41,12 @@ namespace AsciiE
 
                         switch (dir)
                         {
+                            case "cls":
+                                Console.Clear();
+                                break;
+                            case "clear":
+                                Console.Clear();
+                                break;
                             case "left":
                                 if (Passable(playerX - 1, playerY))
                                 {
