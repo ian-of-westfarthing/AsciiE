@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("AsciiE")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("text adventure game engine / AsciiE")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SaberStorm.itch.io")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("(C) 2021 SaberStorm")]
+[assembly: AssemblyCopyright("(C) 2022 SaberStorm (and contributers)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -17,7 +17,7 @@ using System.Runtime.CompilerServices;
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
 // and "{Major}.{Minor}.{Build}.*" will update just the revision.
 
-[assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("0.12.*")]
 
 // The following attributes are used to specify the signing key for the assembly, 
 // if desired. See the Mono documentation for more information about signing.
