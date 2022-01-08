@@ -9,7 +9,7 @@ namespace AsciiE
         // Project variables
         public static float projectVersion = 1.00f;
         public static string projectName = "";
-        public static ProjectType projectType = ProjectType.rogueLike;
+        public static ProjectType projectType = ProjectType.textadventure;
         
         // Game objects
         public static List<Obj> Objects = new List<Obj>();
