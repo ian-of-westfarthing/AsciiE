@@ -381,7 +381,7 @@ namespace AsciiE
             file[2] = projectName + "-obj";
             file[3] = playerX.ToString();
             file[4] = playerY.ToString();
-            file[5] = projectVersion;
+            file[5] = projectVersion.ToString();
 
             File.WriteAllLines(projectName, file);
 
