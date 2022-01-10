@@ -4,12 +4,13 @@ namespace AsciiE
 {
     class MainClass
     {
-        public static float Version = 0.11f;// Version of AsciiE
+        public static float Version = 0.12f;// Version of AsciiE
 
         public static void Main(string[] args)
         {
             
             // Loading message
+            Console.WriteLine("AsciiE version " + Version);
             Console.WriteLine("Loading...");
             
             // add default block (air)
